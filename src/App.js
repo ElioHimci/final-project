@@ -1,18 +1,20 @@
 import './App.css';
+import React from 'react';
+import {Button} from '@mui/material'
 import Container from '@mui/material/Container';
+// import ThemeProvider from '@emotion/react'
 import theme from './styles/theme';
-import { Button } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
-import Appbar from './components/appbar/index.js';
+import Appbar from './components/appbar';
 function App() {
 
   
   return (
     <ThemeProvider theme = {theme}>
     <Container maxWidth  = 'xl'>
-      <Appbar/>
+    <Appbar/>
       {/* 
-      
+      app bar 
       banner 
       promotions
       title 
