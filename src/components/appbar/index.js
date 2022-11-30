@@ -1,12 +1,14 @@
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import AppbarDesktop from "./appbarDesktop";
+import AppbarMobile from "./appbarMobile";
 
 export default function Appbar() {
-    const theme = useTheme
-    const matches = useMediaQuery(theme.breakpoints.down('md'));
-    return(
-        
-        
-        (matches ? <h1>mobile</h1> : <h1>Desktop</h1>)
-        
-    );
+    const theme = useTheme();
+    const matches = useMediaQuery(theme.breakpoints.down('sm'));
+    if(matches) {
+        return <AppbarMobile/>
+    }
+        return <AppbarDesktop/>;
+    
 }
