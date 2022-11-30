@@ -1,3 +1,4 @@
+// import { colors } from '@mui/material';
 import {createTheme} from '@mui/material/styles'
 
 export const Colors = {
@@ -28,7 +29,23 @@ export const Colors = {
   };
 
   const theme  = createTheme ({
+    palette: {
+      primary:{
+        main:Colors.primary
+      },
+      secondary:{
+        main:Colors.secondary
+      }
+    },
+    components: {
+      MuiButton:{
+        defaultProps :{
+          disableElevation: true,
+          disableRipple: true,
+        }
+      }
 
+    }
   }) ;
 
   export default theme;
