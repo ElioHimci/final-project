@@ -1,11 +1,19 @@
 import React from "react";
 import { Divider, ListItemButton, ListItemIcon } from "@mui/material";
-import { MyList } from "../../styles/theme/appbar";
+import { ActionIconsContainerDesktop, ActionIconsContainerMobile,MyList } from "../../styles/theme/appbar";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-export default function Actions () {
+
+
+export default function Actions (matches) {
+    
+    const Component = matches 
+    ? ActionIconsContainerMobile 
+    : ActionIconsContainerDesktop ;
+
     return (
+        <Component>
         <MyList type="row" >
             <Divider orientation="vertical" flexItem/>
             <ListItemButton
@@ -51,5 +59,6 @@ export default function Actions () {
             </ListItemButton>
             <Divider orientation="vertical" flexItem/>
         </MyList>
+        </Component>
     )
 }

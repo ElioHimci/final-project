@@ -8,21 +8,22 @@ import Actions from './actions';
 export default function AppbarDesktop(matches){
 
     
+
     return (
         <AppbarContainer>
-         <AppbarHeader>my Store</AppbarHeader>
-         <MyList type="row">
+        <AppbarHeader>my Store</AppbarHeader>
+        <MyList type="row">
             <ListItemText primary="home"/>
             <ListItemText primary="categories"/>
             <ListItemText primary="products"/>
             <ListItemText primary="Contact Us"/>
-         </MyList>
-         <ListItemButton>
+        </MyList>
+        <ListItemButton>
             <ListItemIcon>
                 <SearchIcon/>
             </ListItemIcon>
-         </ListItemButton>
-         <Actions/>
-         </AppbarContainer>
+        </ListItemButton>
+        <Actions matches = {matches}/>
+        </AppbarContainer>
     )
 }

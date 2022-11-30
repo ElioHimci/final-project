@@ -8,8 +8,8 @@ export default function Appbar() {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     if(matches) {
-        return <AppbarMobile/>
+        return <AppbarMobile matches={matches}/>
     }
-        return <AppbarDesktop/>;
+        return <AppbarDesktop matches={matches}/>;
     
 }
