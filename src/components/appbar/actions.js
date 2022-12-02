@@ -4,6 +4,7 @@ import { ActionIconsContainerDesktop, ActionIconsContainerMobile,MyList } from "
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { Colors } from "../../styles/theme";
 
 
 export default function Actions (matches) {
@@ -15,7 +16,6 @@ export default function Actions (matches) {
     return (
         <Component>
         <MyList type="row" >
-            <Divider orientation="vertical" flexItem/>
             <ListItemButton
             sx={{
                 justifyContent: "center"
@@ -24,7 +24,8 @@ export default function Actions (matches) {
                 <ListItemIcon
                 sx={{
                     display : "flex",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    color : matches && Colors.secondary
                 }}>
                     <ShoppingCartIcon/>
                 </ListItemIcon>
@@ -38,7 +39,8 @@ export default function Actions (matches) {
                 <ListItemIcon
                 sx={{
                     display : "flex",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    color : matches && Colors.secondary
                 }}>
                     <FavoriteIcon/>
                 </ListItemIcon>
@@ -52,7 +54,8 @@ export default function Actions (matches) {
                 <ListItemIcon
                 sx={{
                     display : "flex",
-                    justifyContent: "center"
+                    justifyContent: "center",
+                    color : matches && Colors.secondary
                 }}>
                     <PersonIcon/>
                 </ListItemIcon>
