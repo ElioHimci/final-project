@@ -23,7 +23,6 @@ function App() {
       searchbox
       appdrawer
       */}
-     <Button variant='contained'> home</Button>
      </Container>
     </ThemeProvider> 
   );

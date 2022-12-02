@@ -5,16 +5,21 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Colors } from "../../styles/theme";
-
+import ActionsHelper from "../actionhelper";
 
 export default function Actions (matches) {
-    
-    const Component = matches 
-    ? ActionIconsContainerMobile 
-    : ActionIconsContainerDesktop ;
+    // function Component (matches) {
+    //     if (matches){
+    //         return ActionIconsContainerMobile
+    //     }
+    //         return ActionIconsContainerDesktop
+    // }
+    // const Component = matches 
+    // ? ActionIconsContainerMobile 
+    // : ActionIconsContainerDesktop ;
 
     return (
-        <Component>
+        <ActionsHelper>
         <MyList type="row" >
             <ListItemButton
             sx={{
@@ -62,6 +67,6 @@ export default function Actions (matches) {
             </ListItemButton>
             <Divider orientation="vertical" flexItem/>
         </MyList>
-        </Component>
+        </ActionsHelper>
     )
 }
