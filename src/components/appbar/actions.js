@@ -14,7 +14,8 @@ export default function Actions ({matches}) {
     //     }
     //         return ActionIconsContainerDesktop
     // }
-    const Component = matches 
+
+    const Component = matches
     ? ActionIconsContainerMobile 
     : ActionIconsContainerDesktop ;
 

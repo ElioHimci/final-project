@@ -6,10 +6,8 @@ import { AppbarContainer, AppbarHeader, MyList } from "../../styles/theme/appbar
 import SearchIcon from "@mui/icons-material/Search";
 import Actions from './actions';
 
-export default function AppbarDesktop(matches){
-
+export default function AppbarDesktop({matches}) {
     return (
-        
         <AppbarContainer>
         <AppbarHeader>my Store</AppbarHeader>
         <MyList type="row">

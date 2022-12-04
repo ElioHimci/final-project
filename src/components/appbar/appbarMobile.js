@@ -6,7 +6,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Actions from './actions';
 
 
-export default function AppbarMobile(matches){
+export default function AppbarMobile({matches}){
 
     return (
         <AppbarContainer>
