@@ -7,6 +7,7 @@ import { ThemeProvider } from '@emotion/react';
 import Appbar from './components/appbar';
 import Banner from './components/banner';
 import Promotions from './components/promotions';
+import Products from './components/products';
 function App() {
 
   
@@ -16,10 +17,8 @@ function App() {
     <Appbar/>
     <Banner/>
     <Promotions/>
+    <Products/>
       {/* 
-      promotions
-      title 
-      products
       Footer
       searchbox
       appdrawer
