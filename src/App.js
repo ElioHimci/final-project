@@ -6,6 +6,7 @@ import theme from './styles/theme';
 import { ThemeProvider } from '@emotion/react';
 import Appbar from './components/appbar';
 import Banner from './components/banner';
+import Promotions from './components/promotions';
 function App() {
 
   
@@ -14,6 +15,7 @@ function App() {
     <Container maxWidth  = 'xl'>
     <Appbar/>
     <Banner/>
+    <Promotions/>
       {/* 
       promotions
       title 
