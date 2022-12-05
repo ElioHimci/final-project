@@ -32,8 +32,11 @@ export default function Promotions () {
     return (
         <PromotionsContainer>
             <Slide
-            direction="left"
-            in={show}
+            direction={show ? "left" : "right"}
+            in={show} timeout ={{
+                enter:1000,
+                exit:100,
+            }}
             >
             <Box display = {"flex"} justifyContent = {"center"} alignItems = {"center"}>
                 <MessageText>

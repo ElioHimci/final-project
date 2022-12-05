@@ -9,7 +9,7 @@ export default function Banner () {
     const matches = useMediaQuery(theme.breakpoints.down('sm'));
     return (
         <BannerContainer>
-            <BannerImage src="/images/banner/shop3.jpg"/>
+            <BannerImage src="/images/banner/shop4.jpg"/>
             <BannerContent>
                 <Typography variant = "h6" >Huge Collection</Typography>
                 <BannerTitle variant = "h2"> new bags </BannerTitle>
