@@ -10,7 +10,11 @@ export default function Products() {
     const matches = useMediaQuery(theme.breakpoints.down('md'));
 
     const renderProducts = products.map (product => (
-        <Grid item key = {products.id} display = 'flex ' flexDirection={'column'}
+        <Grid item key = {products.id} 
+        xs = {2}
+        sm = {4}
+        md = {4}
+        display = 'flex ' flexDirection={'column'}
         alignItems= "center">
             <SingleProduct product = {product} matches = {matches} />
         </Grid>
@@ -19,8 +23,10 @@ export default function Products() {
         <Container>
             <Grid
             container
+            spacing = {{ xs : 2 , md : 3 }}
             justifyContent={'center'}
             sx = {{ margin: "20px 4px 10px 4px" }}
+            columns = {{xs :4 , sm : 8 , md : 12}}
             >
                 {renderProducts}
             </Grid>
