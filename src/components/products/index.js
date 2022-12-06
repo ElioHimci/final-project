@@ -4,6 +4,7 @@ import { Container } from "@mui/system";
 import React from "react";
 import { products } from "../../data";
 import SingleProduct from "./SingleProduct";
+import SingleProductDesktop from "./SingleProductDesktop";
 export default function Products() {
 
     const theme = useTheme();
@@ -16,7 +17,8 @@ export default function Products() {
         md = {4}
         display = 'flex ' flexDirection={'column'}
         alignItems= "center">
-            <SingleProduct product = {product} matches = {matches} />
+            {matches ? <SingleProduct product = {product} matches = {matches} />
+            : <SingleProductDesktop product = {product} matches = {matches}/>}
         </Grid>
     ))
     return (
