@@ -9,6 +9,7 @@ import Banner from './components/banner';
 import Promotions from './components/promotions';
 import Products from './components/products';
 import { Box, Typography } from '@mui/material';
+import Footer from './components/footer';
 function App() {
 
   
@@ -22,8 +23,8 @@ function App() {
       <Typography variant='h4'>Our Products</Typography>
     </Box>
     <Products/>
+    <Footer/>
       {/* 
-      Footer
       searchbox
       appdrawer
       */}
