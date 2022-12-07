@@ -58,27 +58,27 @@ export const Colors = {
         }
       },
       MuiDivider :{
-        styleOverrides:{
+        styleOverrides :{
           root:{
             borderColor : lighten(0.2,Colors.primary)
           }
         }
       },
-      MyShopButton: {
-        styleOverrides: {
-          root: {
+      MyShopButton : {
+        styleOverrides : {
+          root : {
             color:Colors.white,
           },
           primary : {
-            background: Colors.primary,
-            "&hover": {
+            background : Colors.primary,
+            "&hover" : {
               background: lighten(0.05,Colors.primary),
             }
           },
           secondary :{
             background : Colors.secondary,
             "&hover": {
-              background: lighten(0.05,Colors.secondary),
+              background : lighten(0.05,Colors.secondary),
             }
           },
         }

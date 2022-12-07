@@ -87,7 +87,7 @@ export default function Footer () {
                 <Grid item md={6} lg={4}>
                     <FooterTitle variant = 'body1'> NewsLetter </FooterTitle>
                     <Stack>
-                        <Input
+                        <Input className="inputfield"
                         color="secondary"
                         label="Email Address"
                         variant= "standart"
