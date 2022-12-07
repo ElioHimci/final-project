@@ -4,8 +4,13 @@ import React from "react";
 import { Stack } from "@mui/system";
 import { Favorite, FitScreen } from "@mui/icons-material";
 import ShareIcon from '@mui/icons-material/Share';
+import useDialogModel from "../../hooks/useDialogModel";
+import { ProductDetail } from "../productdetail";
 
 export default function SingleProduct({product,matches}){
+
+    const [ProductDetailDialog, showProductDetailDialog,closeProductDetailDialog]
+    =useDialogModel(ProductDetail)
 
     return (
         <>
@@ -21,13 +26,14 @@ export default function SingleProduct({product,matches}){
                     <ProductActionButton>
                         <ShareIcon color={"primary"}/>
                     </ProductActionButton>
-                    <ProductActionButton>
+                    <ProductActionButton onClick={()=> showProductDetailDialog()}>
                         <FitScreen color={"primary"}/>
                     </ProductActionButton>
                 </Stack>
             </ProductActionsWrapper>
         </Product>
         <ProductAddToCart variant = "contained"> ADD TO CARD</ProductAddToCart>
+        <ProductDetailDialog product = {product} />
         </>
         );
 }

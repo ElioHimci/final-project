@@ -4,10 +4,15 @@ import React, { useState } from "react";
 import { Stack } from "@mui/system";
 import { Favorite, FitScreen } from "@mui/icons-material";
 import ShareIcon from '@mui/icons-material/Share';
+import useDialogModel from "../../hooks/useDialogModel";
+import { ProductDetail } from "../productdetail";
 
 export default function SingleProductDesktop({product,matches}){
 
     const [showOptions ,setShowOptions]=useState(false)
+
+    const [ProductDetailDialog, showProductDetailDialog,closeProductDetailDialog]
+    =useDialogModel(ProductDetail)
 
     const handleMouseEnter = () =>{
         setShowOptions(true)
@@ -34,13 +39,14 @@ export default function SingleProductDesktop({product,matches}){
                     <ProductActionButton>
                         <ShareIcon color={"primary"}/>
                     </ProductActionButton>
-                    <ProductActionButton>
+                    <ProductActionButton onClick={()=> showProductDetailDialog()}>
                         <FitScreen color={"primary"}/>
                     </ProductActionButton>
                 </Stack>
             </ProductActionsWrapper>
         </Product>
         <ProductMeta product={product} matches= {matches}/>
+        <ProductDetailDialog product = {product} />
         </>
         );
 }
