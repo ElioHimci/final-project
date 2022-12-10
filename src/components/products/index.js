@@ -3,6 +3,7 @@ import { useTheme } from "@mui/material/styles";
 import { Container } from "@mui/system";
 import React from "react";
 import { products } from "../../data";
+import AppPagination from "../pagination";
 import SingleProduct from "./SingleProduct";
 import SingleProductDesktop from "./SingleProductDesktop";
 export default function Products() {
@@ -32,6 +33,7 @@ export default function Products() {
             >
                 {renderProducts}
             </Grid>
+            <AppPagination/>
         </Container>
     );
 }
