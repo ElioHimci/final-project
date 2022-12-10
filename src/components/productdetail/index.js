@@ -54,17 +54,17 @@ export  function ProductDetail({open, onClose ,product}) {
             <DialogContent>
                 <ProductDetailWrapper flexDirection={matches ? 'column' : 'row'}>
                     <Product sx= {{ mr : 4}}>
-                        {/* <ProductImage src={product.image}/> */}
+                        <ProductImage src={product.image}/>
                     </Product>
                 <ProductDetailInfoWrapper>
                     <Typography variant='subtitle1'>sku 123</Typography>
                     <Typography variant='subtitle1'>Availability: 10 in stock</Typography>
                     <Typography sx={{ lineHeight : 2}} variant='h4'>
-                        {/* {product.name} */}
+                        {product.name}
                     </Typography>
                     <Typography variant='body'>
-                        {/* {product.description} */}
-                        {/* {product.description} */}
+                        {product.description}
+                        {product.description}
                     </Typography>
                     <Box 
                     sx= {{mt : 4}} display = 'flex' alignItems={'center'} justifyContent = 'space-between'>

@@ -11,7 +11,7 @@ export default function Products() {
     const matches = useMediaQuery(theme.breakpoints.down('md'));
 
     const renderProducts = products.map (product => (
-        <Grid item key = {products.id} 
+        <Grid item key = {product.id} 
         xs = {2}
         sm = {4}
         md = {4}

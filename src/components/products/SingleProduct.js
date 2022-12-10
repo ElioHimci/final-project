@@ -9,13 +9,12 @@ import { ProductDetail } from "../productdetail";
 
 export default function SingleProduct({product,matches}){
 
-    const [ProductDetailDialog, showProductDetailDialog,closeProductDetailDialog]
-    =useDialogModel(ProductDetail)
+    const [ProductDetailDialog, showProductDetailDialog]
+    =useDialogModel(ProductDetail, { product })
     console.log(product)
 
     return (
         <>
-        
         <Product>
             <ProductImage src={product.image} />
             <ProductMeta product={product} matches= {matches}/>

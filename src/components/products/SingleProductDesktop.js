@@ -11,7 +11,7 @@ export default function SingleProductDesktop({product,matches}){
 
     const [showOptions ,setShowOptions]=useState(false)
 
-    const [ProductDetailDialog, showProductDetailDialog,closeProductDetailDialog]
+    const [ProductDetailDialog, showProductDetailDialog]
     =useDialogModel(ProductDetail)
 
     const handleMouseEnter = () =>{
