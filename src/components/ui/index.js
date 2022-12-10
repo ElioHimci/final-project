@@ -5,7 +5,7 @@ import { Colors } from "../../styles/theme";
 import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import React from "react";
-import clamp from "./clamp";
+import {clamp} from "./clamp";
 
 export default function IncDec(){
 
