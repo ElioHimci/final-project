@@ -4,7 +4,7 @@ import service from "../../services";
 
 const pageSize = 3;
 
-export default function AppPagination() {
+export default function AppPagination({setProducts}) {
 
     const [pagination,setPagination] = useState ({
         count: 0,
@@ -14,8 +14,17 @@ export default function AppPagination() {
     useEffect(() => {
         service.getData({from : pagination.from , to : pagination.to}).then (response => {
             setPagination({...pagination,count : response.count})
+            setProducts (response.data)
+            console.log(response);
         })
-    },[])
+    },[pagination.from , pagination.to])
+
+    const handlePageChange = (e,page) => {
+        const from = (page - 1) * pageSize ;
+        const to = (page - 1 ) * pageSize + pageSize;
+
+        setPagination({...pagination, from : from, to: to});
+    }
 
     return (
         <Box justifyContent={'center'} alignItems = "center" display={'flex'}
@@ -24,7 +33,9 @@ export default function AppPagination() {
         }}
         >
             <Pagination 
+            color = "primary"
             count={Math.ceil(pagination.count / pageSize)}
+            onChange = {handlePageChange}
             />
 
         </Box>
