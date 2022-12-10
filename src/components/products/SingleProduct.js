@@ -11,6 +11,7 @@ export default function SingleProduct({product,matches}){
 
     const [ProductDetailDialog, showProductDetailDialog,closeProductDetailDialog]
     =useDialogModel(ProductDetail)
+    console.log(product)
 
     return (
         <>

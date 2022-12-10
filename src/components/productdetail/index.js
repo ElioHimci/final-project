@@ -26,10 +26,9 @@ const ProductDetailInfoWrapper = styled(Box)(() => ({
 }))
 
 export  function ProductDetail({open, onClose ,product}) {
-
     const theme = useTheme();
     const matches= useMediaQuery(theme.breakpoints.down('md'))
-
+    console.log('===========',product)
     return (
         <Dialog
             TransitionComponent={SlideTransition}
