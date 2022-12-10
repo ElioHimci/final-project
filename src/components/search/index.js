@@ -1,6 +1,6 @@
 import { IconButton, Input, Slide } from "@mui/material";
 import { useUIContext } from "../../context/ui";
-import { SearchBoxContainer, SearchField } from "../../styles/search";
+import { SearchBoxContainer } from "../../styles/search";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 

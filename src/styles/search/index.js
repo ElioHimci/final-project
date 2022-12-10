@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+// import { TextField } from "@mui/material";
 import { Box, styled } from "@mui/system";
 import { Colors } from "../theme";
 
@@ -7,7 +7,7 @@ export const SearchBoxContainer = styled(Box)(({theme}) => ({
     top: 0,
     left: 0,
     width : '100%',
-    height: "100%",
+    height: "30%",
     background:Colors.primary,
     display: 'flex',
     justifyContent: 'center',

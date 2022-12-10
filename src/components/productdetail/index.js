@@ -5,7 +5,6 @@ import React from "react";
 import styled from "@emotion/styled";
 import { useTheme } from "@emotion/react";
 import { Product, ProductImage } from "../../styles/Products";
-// import clamp from "../ui/clamp";
 import IncDec from "../ui";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -29,7 +28,7 @@ const ProductDetailInfoWrapper = styled(Box)(() => ({
 export  function ProductDetail({open, onClose ,product}) {
     const theme = useTheme();
     const matches= useMediaQuery(theme.breakpoints.down('md'))
-    console.log('===========',product)
+    // console.log('===========',product)
     return (
         <Dialog
             TransitionComponent={SlideTransition}

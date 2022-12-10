@@ -8,12 +8,7 @@ import { Colors } from "../../styles/theme";
 // import ActionsHelper from "../actionhelper";
 
 export default function Actions ({matches}) {
-    // function Component (matches) {
-    //     if (matches){
-    //         return ActionIconsContainerMobile
-    //     }
-    //         return ActionIconsContainerDesktop
-    // }
+
 
     const Component = matches
     ? ActionIconsContainerMobile 
