@@ -6,6 +6,7 @@ import { Favorite, FitScreen } from "@mui/icons-material";
 import ShareIcon from '@mui/icons-material/Share';
 import useDialogModel from "../../hooks/useDialogModel";
 import { ProductDetail } from "../productdetail";
+import useCart from "../../hooks/useCart";
 
 export default function SingleProductDesktop({product,matches}){
 
@@ -13,6 +14,8 @@ export default function SingleProductDesktop({product,matches}){
 
     const [ProductDetailDialog, showProductDetailDialog]
     =useDialogModel(ProductDetail, {product})
+
+    const {addToCart, addToCartText } = useCart(product)
 
     const handleMouseEnter = () =>{
         setShowOptions(true)
@@ -30,8 +33,9 @@ export default function SingleProductDesktop({product,matches}){
             </ProductFavButton>
 
             {showOptions && 
-            <ProductAddToCart show= {showOptions} variant = "contained">
-                ADD TO CARD
+            <ProductAddToCart onClick={addToCart}
+            show= {showOptions} variant = "contained">
+                {addToCartText}
             </ProductAddToCart>}
             <ProductActionsWrapper show = {showOptions}>
                 <Stack direction={"column"}>

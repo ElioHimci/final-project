@@ -15,7 +15,7 @@ export default function AppPagination({setProducts}) {
         service.getData({from : pagination.from , to : pagination.to}).then (response => {
             setPagination({...pagination,count : response.count})
             setProducts (response.data)
-            console.log(response);
+            
         })
     },[pagination.from , pagination.to])
 

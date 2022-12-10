@@ -1,14 +1,16 @@
 import React from "react";
-import { Divider, ListItemButton, ListItemIcon } from "@mui/material";
+import { Badge, Divider, ListItemButton, ListItemIcon } from "@mui/material";
 import { ActionIconsContainerDesktop, ActionIconsContainerMobile,MyList } from "../../styles/theme/appbar";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Colors } from "../../styles/theme";
+import { useUIContext } from "../../context/ui";
 // import ActionsHelper from "../actionhelper";
 
 export default function Actions ({matches}) {
 
+    const {cart, setShowCart} = useUIContext() ;
 
     const Component = matches
     ? ActionIconsContainerMobile 
@@ -28,7 +30,10 @@ export default function Actions ({matches}) {
                     justifyContent: "center",
                     color : matches && Colors.secondary
                 }}>
-                    <ShoppingCartIcon/>
+                    <Badge badgeContent = {cart && cart.length} color = 'secondary'>
+                    <ShoppingCartIcon onClick = {() => setShowCart(true)}/>
+
+                    </Badge>
                 </ListItemIcon>
             </ListItemButton>
             <Divider orientation="vertical" flexItem/>
@@ -44,6 +49,7 @@ export default function Actions ({matches}) {
                     color : matches && Colors.secondary
                 }}>
                     <FavoriteIcon/>
+
                 </ListItemIcon>
             </ListItemButton>
             <Divider orientation="vertical" flexItem/>
