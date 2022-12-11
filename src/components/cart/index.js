@@ -12,7 +12,7 @@ export default function Cart() {
     const matches = useMediaQuery (theme.breakpoints.down('md'));
 
     const cartContent = 
-    cart.map ( item => {
+    cart.map ( item => (
         <Box key = {item.id}>
             <Box 
             display={'flex'}
@@ -22,7 +22,7 @@ export default function Cart() {
             <Avatar src= {item.image} sx = {{width : 96 , height : 96}} />
             </Box>
         </Box>
-    })
+    ))
     
     return (
         <Drawer

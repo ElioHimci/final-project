@@ -10,7 +10,7 @@ function useCart(product){
     }
 
     const addToCartText = cart.findIndex((c) => c.id === product.id) >= 0
-    ? "Remove from cart" : "add to cart" ;
+    ? "Remove from cart" : "add to cart" ; 
 
     return (addToCart , addToCartText)
 }
