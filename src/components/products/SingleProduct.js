@@ -6,13 +6,14 @@ import { Favorite, FitScreen } from "@mui/icons-material";
 import ShareIcon from '@mui/icons-material/Share';
 import useDialogModel from "../../hooks/useDialogModel";
 import { ProductDetail } from "../productdetail";
+import useCart from "../../hooks/useCart";
 
 export default function SingleProduct({product,matches}){
 
     const [ProductDetailDialog, showProductDetailDialog]
     =useDialogModel(ProductDetail, { product })
     // console.log(product)
-
+    const {addToCart , addToCartText} = useCart(product)
     return (
         <>
         <Product>
@@ -32,7 +33,7 @@ export default function SingleProduct({product,matches}){
                 </Stack>
             </ProductActionsWrapper>
         </Product>
-        <ProductAddToCart variant = "contained"> ADD TO CARD</ProductAddToCart>
+        <ProductAddToCart onClick={addToCart} variant = "contained"> {addToCartText}</ProductAddToCart>
         <ProductDetailDialog product = {product} />
         </>
         );

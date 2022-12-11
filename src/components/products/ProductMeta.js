@@ -10,7 +10,7 @@ export default function ProductMeta({product,matches}){
             {product.name}
             </Typography>
             <Typography variant={matches? "caption" : "body1"} >
-            ALL{product.price}
+            ${product.price}
             </Typography>
         </ProductMetaWrapper>
     )

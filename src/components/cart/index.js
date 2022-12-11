@@ -21,13 +21,14 @@ export default function Cart() {
                 justifyContent={'space-between'}>
                 <Avatar src= {item.image} sx = {{width : 96 , height : 96 , mr:2}} />
                 <Box display="flex" flexDirection={'column'}>
-                <Typography variant = "h6"> {item.name}</Typography>
-                <Typography variant = "subtitles"> {item.description}</Typography>
+                <Typography variant = "h6" > {item.name}</Typography>
+                {!matches && <Typography variant = "subtitles"> {item.description}</Typography>}
                 </Box>
                 <Typography variant = "body1" justifyContent={'end'}> 
-                ALL {item.price}
+                $ {item.price}
                 </Typography>
             </Box>
+                {matches && <Typography variant = "subtitles"> {item.description}</Typography>}
                 <Divider variant="inset" />
         </Box>
     ))
@@ -39,14 +40,14 @@ export default function Cart() {
         anchor="right"
         PaperProps={{
             sx : {
-                width: 500,
+                width: matches ? '100%' : 500,
                 background: Colors.light_gray,
                 borderRadius : 0
 
             }
         }}
         >
-            <Box 
+            {cart.length > 0 ? <Box 
             sx={{pd : 4 }}
             display = 'flex'
             justifyContent={'center'}
@@ -75,7 +76,22 @@ export default function Cart() {
                     Proceed to payment
                 </Button>
 
-            </Box>
+            </Box> 
+            : <Box
+            sx = {{
+                p : 4,
+            }}
+            display = 'flex'
+            justifyContent={'center'}
+            flexDirection = 'column'
+            alignItems={'center'}
+            >
+                <Typography variant= {matches ? "h5" : "h3"} color = {Colors.black}>
+                Your cart is empty
+                </Typography>
+            </Box>}
+            <Button onClick={() => setShowCart(false)}>Close</Button>
+            
         </Drawer>
     )
 }
