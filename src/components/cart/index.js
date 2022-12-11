@@ -3,6 +3,7 @@ import { Avatar, Button, Divider, Drawer, Paper, Typography, useMediaQuery, useT
 import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { Box } from "@mui/system";
+// import useCart from "../../hooks/useCart";
 
 
 export default function Cart() {
@@ -11,6 +12,8 @@ export default function Cart() {
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
 
+    // const {removeFromCart} = useCart()
+    
     const cartContent = 
     cart.map ( item => (
         <Box key = {item.id}>
@@ -29,6 +32,16 @@ export default function Cart() {
                 </Typography>
             </Box>
                 {matches && <Typography variant = "subtitles"> {item.description}</Typography>}
+                <Box
+                display = 'flex'
+                justifyContent={'center'}
+                >
+                    <Button 
+                    variant = "outlined"
+                    sx= {{mb:1}} 
+                    // onClick={() => removeFromCart()}
+                    > Remove from cart</Button>
+                </Box>
                 <Divider variant="inset" />
         </Box>
     ))
@@ -47,7 +60,8 @@ export default function Cart() {
             }
         }}
         >
-            {cart.length > 0 ? <Box 
+            {cart.length > 0 
+            ? <Box 
             sx={{pd : 4 }}
             display = 'flex'
             justifyContent={'center'}
@@ -86,7 +100,7 @@ export default function Cart() {
             flexDirection = 'column'
             alignItems={'center'}
             >
-                <Typography variant= {matches ? "h5" : "h3"} color = {Colors.black}>
+                <Typography variant= {matches ? "h6" : "h5"} color = {Colors.black}>
                 Your cart is empty
                 </Typography>
             </Box>}
