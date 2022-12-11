@@ -6,7 +6,6 @@ import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
-// import ActionsHelper from "../actionhelper";
 
 export default function Actions ({matches}) {
 
