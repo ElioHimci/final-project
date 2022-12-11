@@ -27,7 +27,7 @@ export default function Cart() {
     return (
         <Drawer
         onClose={() => setShowCart(false)}
-        open = {showCart}>
+        open = {showCart}
         anchor="right"
         PaperProps={{
             sx : {
@@ -37,6 +37,7 @@ export default function Cart() {
 
             }
         }}
+        >
              {cartContent}
         </Drawer>
     )
