@@ -8,11 +8,18 @@ function useCart(product){
         ? setCart(cart.filter(c => c.id !== product.id))
         : setCart(c => [...c , product]);
     }
+
+    const removeFromCart = () =>{
+        cart.findIndex((c) => c.id === product.id) >= 0
+        ? setCart(cart.filter(c => c.id !== product.id))
+        : setCart ([])
+    } 
+
     
     const addToCartText = 
     cart.findIndex((c) => c.id === product.id) >= 0
     ? "Remove from cart" : "add to cart" ; 
 
-    return ({addToCart , addToCartText})
+    return ({addToCart , removeFromCart, addToCartText})
 }
 export default useCart;
