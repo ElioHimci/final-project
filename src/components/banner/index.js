@@ -1,13 +1,9 @@
 import React from "react";
-// import { useTheme } from "@mui/material/styles";
-// import useMediaQuery from '@mui/material/useMediaQuery';
 import { BannerContainer, BannerContent, BannerDescription, BannerImage, BannerShopButton, BannerTitle } from "../../styles/banner";
 import { Typography } from "@mui/material";
 
 export default function Banner () {
-    // const theme = useTheme();
-    // const matches = useMediaQuery(theme.breakpoints.down('sm'));
-
+    
     return (
         <BannerContainer>
             <BannerImage src="/images/banner/photo1.png"/>

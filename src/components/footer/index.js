@@ -1,9 +1,9 @@
-import { Grid,Box, Typography, List, ListItemText, Input, Button } from "@mui/material"
-import React from "react"
-import { FooterTitle } from "../../styles/footer"
-import { Colors } from "../../styles/theme"
-import { Facebook,Twitter,Instagram } from "@mui/icons-material"
-import { Stack } from "@mui/system"
+import { Grid,Box, Typography, List, ListItemText, Button } from "@mui/material";
+import React from "react";
+import { SubscribeTf, FooterTitle } from "../../styles/footer";
+import { Colors } from "../../styles/theme";
+import { Facebook,Twitter,Instagram } from "@mui/icons-material";
+import { Stack } from "@mui/system";
 import SendIcon from '@mui/icons-material/Send';
 
 export default function Footer () {
@@ -22,7 +22,7 @@ export default function Footer () {
                 <Grid item md={6} lg={4}>
                     <FooterTitle variant = "body1">About us</FooterTitle>
                     <Typography variant = "caption2">
-                        hello info about us , contact us and tell us what do you thing about our website.
+                        Hello info about us , contact us and tell us what do you thing about our website.
                     </Typography>
                     <Box sx={{
                         mt : 4,
@@ -54,13 +54,13 @@ export default function Footer () {
                         </ListItemText>
                         <ListItemText>
                             <Typography lineHeight={2} variant = 'caption2'>
-                                Terms & Conditions
+                                Terms &amp; Conditions
                             </Typography>
                         </ListItemText>
                     </List>
                 </Grid>
                 <Grid item md = {6} lg = {2}>
-                    <FooterTitle variant = 'body1'> my account </FooterTitle>
+                    <FooterTitle variant = 'body1'> My account </FooterTitle>
                     <List>
                         <ListItemText>
                             <Typography lineHeight={2} variant = 'caption2'>
@@ -69,7 +69,7 @@ export default function Footer () {
                         </ListItemText>
                         <ListItemText>
                             <Typography lineHeight={2} variant = 'caption2'>
-                                My card
+                                My cart
                             </Typography>
                         </ListItemText>
                         <ListItemText>
@@ -87,11 +87,10 @@ export default function Footer () {
                 <Grid item md={6} lg={4}>
                     <FooterTitle variant = 'body1'> NewsLetter </FooterTitle>
                     <Stack>
-                        <Input className="inputfield"
-                        color="secondary"
-                        label="Email Address"
-                        variant= "standart"
-                        placeholder="Email Address"
+                    <SubscribeTf
+                        color="primary"
+                        label="Email address"
+                        variant="standard"
                         />
                         <Button
                         startIcon={<SendIcon sx={{color: Colors.white}}/>}

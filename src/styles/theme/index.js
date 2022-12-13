@@ -1,5 +1,4 @@
-// import { colors } from '@mui/material';
-import {createTheme} from '@mui/material/styles'
+import {createTheme} from '@mui/material/styles';
 import { lighten } from 'polished';
 
 export const Colors = {

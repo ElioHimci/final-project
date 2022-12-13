@@ -14,8 +14,7 @@ function useCart(product){
         ? setCart(cart.filter(c => c.id !== product.id))
         : setCart ([])
     } 
-
-    
+   
     const addToCartText = 
     cart.findIndex((c) => c.id === product.id) >= 0
     ? "Remove from cart" : "add to cart" ; 

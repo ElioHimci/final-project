@@ -11,8 +11,6 @@ export default function Cart() {
     const {cart,setShowCart,showCart} = useUIContext();
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
-
-    // const {removeFromCart} = useCart()
     
     const cartContent = 
     cart.map ( item => (

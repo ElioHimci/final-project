@@ -12,7 +12,7 @@ export default function SingleProduct({product,matches}){
 
     const [ProductDetailDialog, showProductDetailDialog]
     =useDialogModel(ProductDetail, { product })
-    // console.log(product)
+
     const {addToCart , addToCartText} = useCart(product)
     return (
         <>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Badge, Divider, ListItemButton, ListItemIcon } from "@mui/material";
-import { ActionIconsContainerDesktop, ActionIconsContainerMobile,MyList } from "../../styles/theme/appbar";
+import { ActionIconsContainerDesktop, ActionIconsContainerMobile,MyList } from "../../styles/appbar";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -23,14 +23,14 @@ export default function Actions ({matches}) {
                 justifyContent: "center"
             }}
             >
-                <ListItemIcon
+                <ListItemIcon onClick = {() => setShowCart(true)}
                 sx={{
                     display : "flex",
                     justifyContent: "center",
                     color : matches && Colors.secondary
                 }}>
                     <Badge badgeContent = {cart && cart.length} color = 'secondary'>
-                    <ShoppingCartIcon onClick = {() => setShowCart(true)}/>
+                    <ShoppingCartIcon />
 
                     </Badge>
                 </ListItemIcon>

@@ -15,7 +15,7 @@ export default function SingleProductDesktop({product,matches}){
     const [ProductDetailDialog, showProductDetailDialog]
     =useDialogModel(ProductDetail, {product})
 
-    const {addToCart, removeFromCart, addToCartText } = useCart(product)
+    const {addToCart, addToCartText } = useCart(product)
 
     const handleMouseEnter = () =>{
         setShowOptions(true)

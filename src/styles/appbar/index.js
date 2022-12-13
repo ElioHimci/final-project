@@ -1,8 +1,10 @@
 import { IconButton, List, Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { Box } from "@mui/system";
-import { Colors } from "..";
-import "@fontsource/montez"
+import { Colors } from "../theme";
+import "@fontsource/montez";
+import { textPopUpTop } from "../../animation";
+
 
 //container
 export const AppbarContainer = styled(Box)(() => 
@@ -21,6 +23,9 @@ export const AppbarHeader = styled(Typography)(()=>({
     fontSize: '4em',
     fontFamily:`"Montez" , "cursive"`,
     color:Colors.secondary,
+    "&:hover": {
+        animation: `${textPopUpTop} 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both`,
+      },
 }));
 
 export const MyList = styled(List)(({type})=>({

@@ -64,13 +64,11 @@ export const BannerShopButton = styled(Button,{
     ]
 })(({theme})=> ({
     padding : '20px 0px',
-    //problem style
     color : Colors.white ,
     background : Colors.primary,
     ":hover": {
         background: lighten(0.05,Colors.primary),
     },
-    //problem style 2:08
     fontWeight : "bold",
     fontSize : "16px",
     [theme.breakpoints.down("sm")] : {

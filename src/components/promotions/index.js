@@ -4,9 +4,9 @@ import React, { useEffect, useState } from "react";
 import { MessageText, PromotionsContainer } from "../../styles/promotions";
 
 const messages = [
-    "20% off on your first order",
-    "Winter sales starts now , visit my store.",
-    "Please sign up and subscribe :)" ,
+    "Don't be slow! Our prices are low.",
+    "It's the biggest sale of the year!",
+    "Everything you need—on a budget." ,
 ];
 export default function Promotions () {
     const [messageIndex,setMessageIndex] = useState(0)

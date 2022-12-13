@@ -15,12 +15,3 @@ export default function Appbar() {
         </>
     );       
 }
-// export default function Appbar() {
-//     const theme = useTheme();
-//     const matches = useMediaQuery(theme.breakpoints.down('sm'));
-//     if(matches) {
-//         return <AppbarMobile matches={matches}/>
-//     }
-//         return <AppbarDesktop matches={matches}/>;
-    
-// }
