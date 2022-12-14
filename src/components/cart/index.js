@@ -3,15 +3,18 @@ import { Avatar, Button, Divider, Drawer, Paper, Typography, useMediaQuery, useT
 import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { Box } from "@mui/system";
-// import useCart from "../../hooks/useCart";
+import useCart from "../../hooks/useCart";
 
 
-export default function Cart() {
+export default function Cart(product) {
 
     const {cart,setShowCart,showCart} = useUIContext();
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
     
+    const {addToCart , addToCartText, removeFromCart,removeAllCart} = useCart(product)
+
+
     const cartContent = 
     cart.map ( item => (
         <Box key = {item.id}>
@@ -37,7 +40,7 @@ export default function Cart() {
                     <Button 
                     variant = "outlined"
                     sx= {{mb:1}} 
-                    // onClick={() => removeFromCart()}
+                    onClick={() => removeFromCart()}
                     > Remove from cart</Button>
                 </Box>
                 <Divider variant="inset" />
@@ -84,7 +87,12 @@ export default function Cart() {
 
              {cartContent}
                 </Paper>
-                <Button sx = {{mt : 4}} variant = "contained">
+                <Button 
+                    variant = "outlined"
+                    sx= {{mt:1 , mb:0}} 
+                    onClick={() => removeAllCart()}
+                    > Clear cart</Button>
+                <Button sx = {{mt : 1}} variant = "contained">
                     Proceed to payment
                 </Button>
 
