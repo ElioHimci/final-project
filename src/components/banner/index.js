@@ -6,7 +6,7 @@ export default function Banner () {
     
     return (
         <BannerContainer>
-            <BannerImage src="/images/banner/photo1.png"/>
+            <BannerImage src="/images/banner/shopp.jpeg"/>
             <BannerContent>
                 <Typography variant = "h6" >Huge Collection</Typography>
                 <BannerTitle variant = "h2"> new bags </BannerTitle>

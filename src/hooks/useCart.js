@@ -10,12 +10,12 @@ function useCart(product){
     }
 
     const removeFromCart = () =>{
-        // PER TU RREGULLU
-        // cart.findIndex(c => c.id === product.id) >= 0
-        // ? setCart(cart.filter(c => c.id !== product.id))
-        // : setCart(cart.filter(c => c.id !== product.id));
-        console.log("removed");
-    } 
+         if (cart.findIndex(c => c.id === product.id) >= 0) {
+            setCart(cart.filter(c => c.id !== product.id)) 
+         }
+         // ? setCart(cart.filter(c => c.id !== product.id)) 
+         // : setCart(cart.slice(0,-1));// PER TU RREGULLU
+        }
 
     const removeAllCart = () =>{
          setCart ([]);
@@ -25,6 +25,6 @@ function useCart(product){
     cart.findIndex((c) => c.id === product.id) >= 0
     ? "Remove from cart" : "add to cart" ; 
 
-    return ({addToCart , removeFromCart, addToCartText,removeAllCart})
+    return {addToCart , removeFromCart, addToCartText,removeAllCart}
 }
 export default useCart;

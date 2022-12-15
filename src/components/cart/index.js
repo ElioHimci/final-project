@@ -12,7 +12,7 @@ export default function Cart(product) {
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
     
-    const {addToCart , addToCartText, removeFromCart,removeAllCart} = useCart(product)
+    const { removeFromCart,removeAllCart} = useCart(product)
 
 
     const cartContent = 
