@@ -11,9 +11,10 @@ function useCart(product){
 
     const removeFromCart = () =>{
         // PER TU RREGULLU
-        // cart.findIndex(c => c.id === product.id) >= 0 &&
-        // setCart(cart.filter(c => c.id !== product.id)) &&
-        console.log("removed")
+        // cart.findIndex(c => c.id === product.id) >= 0
+        // ? setCart(cart.filter(c => c.id !== product.id))
+        // : setCart(cart.filter(c => c.id !== product.id));
+        console.log("removed");
     } 
 
     const removeAllCart = () =>{

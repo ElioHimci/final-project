@@ -4,7 +4,6 @@ import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { Box } from "@mui/system";
 import useCart from "../../hooks/useCart";
-import IncDec from "../ui";
 
 
 export default function Cart(product) {
@@ -36,15 +35,11 @@ export default function Cart(product) {
                 {matches && <Typography variant = "subtitles"> {item.description}</Typography>}
                 <Box
                 display = 'flex'
-                justifyContent={'space-around'}
-                sx = {{m:1}}
+                justifyContent={'center'}
                 >
-                    <Box >
-                    <IncDec />
-                    </Box>
-                    
                     <Button 
                     variant = "outlined"
+                    sx= {{mb:1}} 
                     onClick={() => removeFromCart()}
                     > Remove from cart</Button>
                 </Box>
