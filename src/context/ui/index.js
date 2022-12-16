@@ -13,6 +13,8 @@ export const UIProvider = ({children})=> {
     const [cart,setCart] = useState([]);
     const [showCart,setShowCart] = useState(false);
 
+    const [price, setPrice] = useState(0);
+
     const value= {
         drawerOpen,
         setDrawerOpen,
@@ -22,7 +24,8 @@ export const UIProvider = ({children})=> {
         setCart,
         showCart,
         setShowCart,
-
+        price,
+        setPrice,
     }
 
     return  <UIContext.Provider value={value} >{children}</UIContext.Provider>

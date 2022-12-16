@@ -10,7 +10,8 @@ import {clamp} from "./clamp";
 export default function IncDec(){
 
     const clampV = clamp(1,10);
-    const [value,setValue] = useState(1)
+    const [amount,setAmount] = useState(1);
+
     return(
         <Box display={'flex'}>
             <IconButton
@@ -18,7 +19,7 @@ export default function IncDec(){
                 borderRadius: 0,
                 background:`${Colors.secondary}`
             }}
-            onClick={()=> setValue(clampV(value - 1)) }>
+            onClick={()=> setAmount(clampV(amount - 1)) }>
             <RemoveIcon/>
             </IconButton>
             <Typography
@@ -28,14 +29,14 @@ export default function IncDec(){
                 p : 2
             }}
             >
-                {value}
+                {amount}
             </Typography>
             <IconButton
             sx={{
                 borderRadius: 0,
                 background:`${Colors.secondary}`
             }}
-            onClick={()=> setValue(clampV(value + 1)) }>
+            onClick={()=> setAmount(clampV(amount + 1)) }>
             <AddIcon/>
             </IconButton>
         </Box>

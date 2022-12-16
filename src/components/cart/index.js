@@ -4,11 +4,12 @@ import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { Box } from "@mui/system";
 import useCart from "../../hooks/useCart";
+import IncDec from "../ui";
 
 
 export default function Cart(product) {
 
-    const {cart,setShowCart,showCart} = useUIContext();
+    const {cart,setShowCart,showCart,price,amount} = useUIContext();
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
     
@@ -37,6 +38,7 @@ export default function Cart(product) {
                 display = 'flex'
                 justifyContent={'center'}
                 >
+                    <IncDec/> {amount}
                     <Button 
                     variant = "outlined"
                     sx= {{mb:1}} 
@@ -98,7 +100,7 @@ export default function Cart(product) {
                     onClick={() => setPrice()}
                     > Calculate</Button> */}
                 <Typography variant= 'body' color = {Colors.black}>
-                    Total amount :
+                    Total amount : {price}
                 </Typography>
             </Box> 
             : <Box

@@ -4,41 +4,47 @@ export const products = [
         name: "Super Backpack",
         price: 129.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
-        image: "/images/products/product1.png"
+        image: "/images/products/product1.png",
+        amount: 1,
     },
     {
         id: 2,
         name: "New Hip",
         price: 199.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
-        image: "/images/products/bag_02.png"
+        image: "/images/products/bag_02.png",
+        amount: 1,
     },
     {
         id: 3,
         name: "Elite Series",
         price: 189.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
-        image: "/images/products/bag_03.png"
+        image: "/images/products/bag_03.png",
+        amount: 1,
     },
     {
         id: 4,
         name: "Casual",
         price: 129.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
-        image: "/images/products/bag_04.png"
+        image: "/images/products/bag_04.png",
+        amount: 1,
     },
     {
         id: 5,
         name: "Best Tote",
         price: 399.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
-        image: "/images/products/bag_05.png"
+        image: "/images/products/bag_05.png",
+        amount: 1,
     },
     {
         id: 6,
         name: "Charming Series",
         price: 689.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
-        image: "/images/products/bag_06.png"
+        image: "/images/products/bag_06.png",
+        amount: 1,
     }
 ]

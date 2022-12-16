@@ -1,7 +1,18 @@
+import { useEffect } from "react";
 import { useUIContext } from "../context/ui";
 
 function useCart(product){
-    const {cart,setCart} = useUIContext();
+    const {cart,setCart,setPrice} = useUIContext();
+
+    const handlePrice = () => {
+        let total = 0;
+        cart.map((product)=> (total += product.amount * product.price));
+        setPrice(total)
+    }
+
+    useEffect(()=>{
+        handlePrice();
+    });
 
     const addToCart = () => {
         cart.findIndex(c => c.id === product.id) >= 0
@@ -9,10 +20,10 @@ function useCart(product){
         : setCart(c => [...c , product]);
     }
 
-        const removeFromCart = (id) =>{
-            const arr = cart.filter((item) => item.id !== id)
-            setCart(arr)
-        }
+    const removeFromCart = (id) =>{
+        const arr = cart.filter((item) => item.id !== id)
+        setCart(arr)
+    }
         
 
     const removeAllCart = () =>{
@@ -23,6 +34,6 @@ function useCart(product){
     cart.findIndex((c) => c.id === product.id) >= 0
     ? "Remove from cart" : "add to cart" ; 
 
-    return {addToCart , removeFromCart, addToCartText,removeAllCart}
+    return {addToCart , removeFromCart, addToCartText,removeAllCart,handlePrice}
 }
 export default useCart;
