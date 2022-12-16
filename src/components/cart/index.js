@@ -9,7 +9,7 @@ import IncDec from "../ui";
 
 export default function Cart(product) {
 
-    const {cart,setShowCart,showCart,price,amount} = useUIContext();
+    const {cart,setShowCart,showCart,price,amount,setShowCheckout} = useUIContext();
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
     
@@ -36,9 +36,10 @@ export default function Cart(product) {
                 {matches && <Typography variant = "subtitles"> {item.description}</Typography>}
                 <Box
                 display = 'flex'
-                justifyContent={'center'}
+                justifyContent={'space-around'}
+                sx={{p:2}}
                 >
-                    <IncDec/> {amount}
+                    <IncDec /> {amount}
                     <Button 
                     variant = "outlined"
                     sx= {{mb:1}} 
@@ -93,14 +94,14 @@ export default function Cart(product) {
                     sx= {{mt:1 , mb:0}} 
                     onClick={() => removeAllCart()}
                     > Clear cart</Button>
-                <Button sx = {{mt : 1}} variant = "contained">
+                <Button sx = {{mt : 1}} variant = "contained" onClick = {() => setShowCheckout(true)}>
                     Proceed to payment
                 </Button>
                 {/* <Button  
                     onClick={() => setPrice()}
                     > Calculate</Button> */}
                 <Typography variant= 'body' color = {Colors.black}>
-                    Total amount : {price}
+                    Total amount : ${price}
                 </Typography>
             </Box> 
             : <Box
