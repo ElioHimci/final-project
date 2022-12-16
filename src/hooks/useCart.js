@@ -9,13 +9,11 @@ function useCart(product){
         : setCart(c => [...c , product]);
     }
 
-    const removeFromCart = () =>{
-         if (cart.findIndex(c => c.id === product.id) >= 0) {
-            setCart(cart.filter(c => c.id !== product.id)) 
-         }
-         // ? setCart(cart.filter(c => c.id !== product.id)) 
-         // : setCart(cart.slice(0,-1));// PER TU RREGULLU
+        const removeFromCart = (id) =>{
+            const arr = cart.filter((item) => item.id !== id)
+            setCart(arr)
         }
+        
 
     const removeAllCart = () =>{
          setCart ([]);

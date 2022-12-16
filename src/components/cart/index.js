@@ -28,7 +28,7 @@ export default function Cart(product) {
                 <Typography variant = "h6" > {item.name}</Typography>
                 {!matches && <Typography variant = "subtitles"> {item.description}</Typography>}
                 </Box>
-                <Typography variant = "body1" justifyContent={'end'}> 
+                <Typography variant = "body2" justifyContent={'end'}> 
                 $ {item.price}
                 </Typography>
             </Box>
@@ -40,7 +40,7 @@ export default function Cart(product) {
                     <Button 
                     variant = "outlined"
                     sx= {{mb:1}} 
-                    onClick={() => removeFromCart()}
+                    onClick={() => removeFromCart(item.id)}
                     > Remove from cart</Button>
                 </Box>
                 <Divider variant="inset" />
@@ -88,14 +88,18 @@ export default function Cart(product) {
              {cartContent}
                 </Paper>
                 <Button 
-                    variant = "outlined"
                     sx= {{mt:1 , mb:0}} 
                     onClick={() => removeAllCart()}
                     > Clear cart</Button>
                 <Button sx = {{mt : 1}} variant = "contained">
                     Proceed to payment
                 </Button>
-
+                {/* <Button  
+                    onClick={() => setPrice()}
+                    > Calculate</Button> */}
+                <Typography variant= 'body' color = {Colors.black}>
+                    Total amount :
+                </Typography>
             </Box> 
             : <Box
             sx = {{

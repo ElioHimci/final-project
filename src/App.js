@@ -13,6 +13,7 @@ import { UIProvider } from './context/ui';
 import SearchBox from './components/search';
 import Cart from './components/cart';
 import Title from './components/title/title';
+import Checkout from './components/checkout';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Footer/>
       <AppDrawer/>
       <Cart/>
+      <Checkout/>
       <SearchBox/>
     </UIProvider>
      </Container>
