@@ -97,9 +97,7 @@ export default function Cart(product) {
                 <Button sx = {{mt : 1}} variant = "contained" onClick = {() => setShowCheckout(true)}>
                     Proceed to payment
                 </Button>
-                {/* <Button  
-                    onClick={() => setPrice()}
-                    > Calculate</Button> */}
+        
                 <Typography variant= 'body' color = {Colors.black}>
                     Total amount : ${price}
                 </Typography>
