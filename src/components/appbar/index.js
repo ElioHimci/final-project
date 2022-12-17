@@ -15,8 +15,13 @@ export default function Appbar() {
     const handleLogin = () =>{
         showLoginDialog()
     }
-    const handleLogout = () =>{
-        
+    const handleLogout = async () =>{
+        console.log("logout");
+        try{
+            await firebasedb.logout()
+        }catch (error){
+            console.log(error)
+        }
     }
     return(
         <>

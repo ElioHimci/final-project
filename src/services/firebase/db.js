@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import 'firebase/auth';
-import { createUserWithEmailAndPassword, updateProfile,getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile,getAuth, signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBN9RJH_PWueALzUEgHIO7AMbHK4ZeuqTw",
@@ -26,10 +26,13 @@ async function register ({firstname,lastname,email,password}) {
     await updateProfile(resp.user, {displayName: `${firstname} ${lastname}`});
 }
 async function login({email,password}){
-
+    const resp = await signInWithEmailAndPassword(
+        auth , email , password
+    )
+    return resp.user
 }
 async function logout(){
- console.log(app.options);
+    await signOut(auth);
 }
 export const firebasedb = {
     register:register,
