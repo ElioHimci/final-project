@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Actions from './actions';
 import { useUIContext } from '../../context/ui';
 
-export default function AppbarDesktop({matches}) {
+export default function AppbarDesktop({matches, onLoginClick , onLogoutClick}) {
     const { setShowSearchBox} = useUIContext();
 
     return (
@@ -23,7 +23,9 @@ export default function AppbarDesktop({matches}) {
                 <SearchIcon />
             </ListItemIcon>
         </ListItemButton>
-        <Actions matches = {matches}/>
+        <Actions onLogin={onLoginClick}
+            onLogout={onLogoutClick}
+            matches = {matches}/>
         </AppbarContainer>
     )
 }
