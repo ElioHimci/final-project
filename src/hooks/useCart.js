@@ -30,10 +30,9 @@ function useCart(product){
          setCart ([]);
     } 
    
-    const addToCartText = 
-    cart.findIndex((c) => c.id === product.id) >= 0
+    const addToCartText = cart.findIndex((c) => c.id === product.id) >= 0
     ? "Remove from cart" : "add to cart" ; 
 
-    return {addToCart , removeFromCart, addToCartText,removeAllCart,handlePrice}
+    return {addToCart , removeFromCart, addToCartText,removeAllCart,handlePrice,cart,setCart}
 }
 export default useCart;

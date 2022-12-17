@@ -6,11 +6,46 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import AddIcon from '@mui/icons-material/Add';
 import React from "react";
 import {clamp} from "./clamp";
+import useCart from "../../hooks/useCart";
 
-export default function IncDec(){
+export default function IncDec({product}){
 
     const clampV = clamp(1,10);
-    const [amount,setAmount] = useState(1);
+    const [amount,setAmount] = useState(product.amount);
+    const {cart,setCart} = useCart(product);
+
+    const handleDecrement = () =>{
+        const newAmount = clampV(amount - 1)
+
+        const productIndex = cart.findIndex(c => c.id === product.id)
+
+        const newProduct = { ...cart[productIndex], amount: newAmount }
+        
+        const updatedCart = [
+            ...cart.slice(0, productIndex),
+            newProduct,
+            ...cart.slice(productIndex + 1)
+        ]
+        
+        setCart(updatedCart)
+        setAmount(newAmount)
+    }
+    const handleIncrement = () =>{
+        const newAmount = clampV(amount + 1)
+
+        const productIndex = cart.findIndex(c => c.id === product.id)
+
+        const newProduct = { ...cart[productIndex], amount: newAmount }
+
+        const updatedCart = [
+            ...cart.slice(0, productIndex),
+            newProduct,
+            ...cart.slice(productIndex + 1)
+        ]
+        
+        setCart(updatedCart)
+        setAmount(newAmount)
+    }
 
     return(
         <Box display={'flex'}>
@@ -19,7 +54,7 @@ export default function IncDec(){
                 borderRadius: 0,
                 background:`${Colors.secondary}`
             }}
-            onClick={()=> setAmount(clampV(amount - 1)) }>
+            onClick={()=> handleDecrement() }>
             <RemoveIcon/>
             </IconButton>
             <Typography
@@ -36,7 +71,7 @@ export default function IncDec(){
                 borderRadius: 0,
                 background:`${Colors.secondary}`
             }}
-            onClick={()=> setAmount(clampV(amount + 1)) }>
+            onClick={()=> handleIncrement() }>
             <AddIcon/>
             </IconButton>
         </Box>

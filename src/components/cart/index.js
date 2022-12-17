@@ -39,7 +39,7 @@ export default function Cart(product) {
                 justifyContent={'space-around'}
                 sx={{p:2}}
                 >
-                    <IncDec /> {amount}
+                    <IncDec product = {item} /> {amount}
                     <Button 
                     variant = "outlined"
                     sx= {{mb:1}} 
