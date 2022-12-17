@@ -24,6 +24,10 @@ function useCart(product){
         const arr = cart.filter((item) => item.id !== id)
         setCart(arr)
     }
+    const onlyAddToCart = (id) =>{
+        const arr = (c => [...c , product]);
+        setCart(arr)
+    }
         
 
     const removeAllCart = () =>{
@@ -33,6 +37,6 @@ function useCart(product){
     const addToCartText = cart.findIndex((c) => c.id === product.id) >= 0
     ? "Remove from cart" : "add to cart" ; 
 
-    return {addToCart , removeFromCart, addToCartText,removeAllCart,handlePrice,cart,setCart}
+    return {addToCart , removeFromCart, addToCartText,removeAllCart,handlePrice,cart,setCart,onlyAddToCart}
 }
 export default useCart;

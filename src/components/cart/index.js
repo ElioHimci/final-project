@@ -9,7 +9,7 @@ import IncDec from "../ui";
 
 export default function Cart(product) {
 
-    const {cart,setShowCart,showCart,price,amount,setShowCheckout} = useUIContext();
+    const {cart,setShowCart,showCart,price,setShowCheckout} = useUIContext();
     const theme = useTheme();
     const matches = useMediaQuery (theme.breakpoints.down('md'));
     
@@ -39,7 +39,7 @@ export default function Cart(product) {
                 justifyContent={'space-around'}
                 sx={{p:2}}
                 >
-                    <IncDec product = {item} /> {amount}
+                    <IncDec product = {item} />
                     <Button 
                     variant = "outlined"
                     sx= {{mb:1}} 

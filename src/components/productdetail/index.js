@@ -10,6 +10,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import useCart from "../../hooks/useCart";
 
 function SlideTransition(props){
     return <Slide direction = 'down' {...props}/>
@@ -28,6 +29,9 @@ const ProductDetailInfoWrapper = styled(Box)(() => ({
 export  function ProductDetail({open, onClose ,product}) {
     const theme = useTheme();
     const matches= useMediaQuery(theme.breakpoints.down('md'))
+
+    const { addToCart,addToCartText} = useCart(product)
+
 
     return (
         <Dialog
@@ -69,8 +73,8 @@ export  function ProductDetail({open, onClose ,product}) {
                     <Box 
                     sx= {{mt : 4}} display = 'flex' alignItems={'center'} justifyContent = 'space-between'>
 
-                    <IncDec />
-                    <Button variant = 'contained'>Add to card</Button>
+                    <IncDec product = {product} />
+                    <Button variant = 'contained' onClick={addToCart} >{addToCartText}</Button>
                     </Box>
                     <Box 
                     display = 'flex'
