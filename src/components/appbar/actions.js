@@ -7,12 +7,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { useState } from "react";
+import { useUser } from "../../context/user";
 
 export default function Actions ({matches, onLogin , onLogout}) {
 
     const[anchorEl,setAnchorEl] = useState(null);
     const {cart, setShowCart} = useUIContext() ;
-
+    const{user} = useUser()
 
     const Component = matches
     ? ActionIconsContainerMobile 
@@ -77,8 +78,8 @@ export default function Actions ({matches, onLogin , onLogout}) {
         anchorEl={anchorEl}
         open = {anchorEl !== null}
         onClose = {() => setAnchorEl(null)}>
-            <MenuItem onClick = {onLogin}>Login</MenuItem>
-            <MenuItem onClick = {onLogout}>Logout</MenuItem>
+            {! user && <MenuItem onClick = {onLogin}>Login</MenuItem>}
+            { user && <MenuItem onClick = {onLogout}>Logout</MenuItem>}
         </Menu>
 
         </Component>

@@ -14,6 +14,7 @@ import SearchBox from './components/search';
 import Cart from './components/cart';
 import Title from './components/title/title';
 import Checkout from './components/checkout';
+import UserProvider from './context/user';
 
 
 function App() {
@@ -21,19 +22,21 @@ function App() {
   
   return (
     <ThemeProvider theme = {theme}>
-      <Container maxWidth  = 'xl'>
-        <UIProvider>
-      <Appbar/>
-      <Banner/>
-      <Promotions/>
-      <Title/>
-      <Products/>
-      <Footer/>
-      <AppDrawer/>
-      <Cart/>
-      <Checkout/>
-      <SearchBox/>
-    </UIProvider>
+     <Container maxWidth  = 'xl'>
+      <UIProvider>
+        <UserProvider>
+        <Appbar/>
+        <Banner/>
+        <Promotions/>
+        <Title/>
+        <Products/>
+        <Footer/>
+        <AppDrawer/>
+        <Cart/>
+        <Checkout/>
+        <SearchBox/>
+        </UserProvider>
+      </UIProvider>
      </Container>
     </ThemeProvider> 
   );

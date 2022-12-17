@@ -7,6 +7,8 @@ import { firebasedb } from "../../services/firebase/db";
 
 export default function Login({open,onClose}) {
     const[joinUs,setJoinUs]= useState(false)
+    const [loading,setLoading] = useState(false)
+
     const [form ,setForm] = useState({
         firstname: '',
         lastname : '',
@@ -16,21 +18,27 @@ export default function Login({open,onClose}) {
 
     const handleJoinUsSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
 
         try{
             await firebasedb.register({...form})
+            onClose();
         } catch (error){
             console.log(error);
         }
+        setLoading(false);
+
     }
     const handleLoginSubmit = async (event) => {
         event.preventDefault();
-
+        setLoading(true);
         try{
             await firebasedb.login({...form})
+            onClose();
         } catch (error){
             console.log(error);
         }
+        setLoading(false);
 
     }
     const handleFormFieldUpdate = (value,field) =>{
@@ -93,8 +101,8 @@ export default function Login({open,onClose}) {
                         onChange={(event) => handleFormFieldUpdate(event.target.value , 'password')}
 
                         />
-                        <Button fullWidth type = 'submit' variant="contained"> 
-                        Sign up
+                        <Button disabled={loading} fullWidth type = 'submit' variant="contained"> 
+                        {loading ? "Please wait .." : "Sign up" }
                         </Button>
                         </form>
                         <Box sx={{mt:2 , textAlign:'center'}}>
@@ -128,8 +136,9 @@ export default function Login({open,onClose}) {
                             onChange={(event) => handleFormFieldUpdate(event.target.value , 'password')}
 
                             />
-                            <Button fullWidth type = 'submit' variant="contained"> 
-                            Log in
+                            <Button disabled={loading} fullWidth type = 'submit' variant="contained"> 
+                            {loading ? "Please wait .." : "Log in" }
+
                             </Button>
                             </form>
                             <Box sx={{mt:2 , textAlign:'center'}}>
