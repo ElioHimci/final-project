@@ -1,5 +1,5 @@
 import React from "react";
-import { Badge, Divider, ListItemButton, ListItemIcon, Menu, MenuItem } from "@mui/material";
+import { Badge, Divider, ListItemButton, ListItemIcon, Menu, MenuItem, Typography } from "@mui/material";
 import { ActionIconsContainerDesktop, ActionIconsContainerMobile,MyList } from "../../styles/appbar";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PersonIcon from '@mui/icons-material/Person';
@@ -8,6 +8,7 @@ import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { useState } from "react";
 import { useUser } from "../../context/user";
+import { Box } from "@mui/system";
 
 export default function Actions ({matches, onLogin , onLogout}) {
 
@@ -68,8 +69,11 @@ export default function Actions ({matches, onLogin , onLogout}) {
                     color : matches && Colors.secondary
                 }}
                 onClick={(event)=> setAnchorEl(event.currentTarget)}
-                >
+                >   
+                    <Box display = 'flex' flexDirection ='column'>
                     <PersonIcon/>
+                   {user && <Typography variant="caption"> {user.displayName} </Typography>}
+                    </Box>
                 </ListItemIcon>
             </ListItemButton>
             <Divider orientation="vertical" flexItem/>
