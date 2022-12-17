@@ -4,13 +4,16 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import AppbarDesktop from "./appbarDesktop";
 import AppbarMobile from "./appbarMobile";
 import { firebasedb } from '../../services/firebase/db';
+import Login from '../login';
+import useDialogModel from '../../hooks/useDialogModel';
 
 export default function Appbar() {
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
+    const [LoginDialog,showLoginDialog] = useDialogModel(Login)
 
     const handleLogin = () =>{
-        console.log('login');
+        showLoginDialog()
     }
     const handleLogout = () =>{
         
@@ -26,6 +29,7 @@ export default function Appbar() {
                 onLoginClick={handleLogin}
                 onLogoutClick={handleLogout}
             matches={matches}/>)}
+            <LoginDialog/>
         </>
     );       
 }

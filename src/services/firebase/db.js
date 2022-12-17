@@ -1,4 +1,6 @@
 import { initializeApp } from "firebase/app";
+import 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile,getAuth } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBN9RJH_PWueALzUEgHIO7AMbHK4ZeuqTw",
@@ -11,9 +13,17 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app)
 
 async function register ({firstname,lastname,email,password}) {
 
+    const resp = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+    );
+
+    await updateProfile(resp.user, {displayName: `${firstname} ${lastname}`});
 }
 async function login({email,password}){
 

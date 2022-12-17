@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Drawer, useMediaQuery } from "@mui/material";
+import { Button, Drawer, TextField, useMediaQuery } from "@mui/material";
 import { Colors } from "../../styles/theme";
 import { useUIContext } from "../../context/ui";
 import { useTheme } from "@emotion/react";
@@ -54,7 +54,7 @@ export default function Checkout() {
             flexDirection= 'column'
             alignItems={'center'}
             >
-            <input
+            <TextField
             type="tel"
             name="number"
             val={number}
@@ -62,7 +62,7 @@ export default function Checkout() {
             onChange={e => setNumber(e.target.value)}
             onFocus={e=>setFocus(e.target.name)}
             />
-            <input
+            <TextField
             type="tel"
             name="name"
             val={name}
@@ -70,7 +70,7 @@ export default function Checkout() {
             onChange={e => setName(e.target.value)}
             onFocus={e=>setFocus(e.target.name)}
             />
-            <input
+            <TextField
             type="tel"
             name="expiry"
             val={expiry}
@@ -78,7 +78,7 @@ export default function Checkout() {
             onChange={e => setExpiry(e.target.value)}
             onFocus={e=>setFocus(e.target.name)}
             />
-            <input
+            <TextField
             type="tel"
             name="cvc"
             val={cvc}
