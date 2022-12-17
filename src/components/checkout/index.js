@@ -13,10 +13,11 @@ export default function Checkout() {
     return (
         <Drawer 
         open={showCheckout}
+        onClose={() => setShowCheckout(false)}
         anchor='right'
         PaperProps={{
             sx: {
-                width : 500,
+                width : matches ? '100%' : 500,
                 background : Colors.light_gray,
                 borderRadius:0
             }
