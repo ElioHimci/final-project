@@ -30,7 +30,7 @@ export  function ProductDetail({open, onClose ,product}) {
     const theme = useTheme();
     const matches= useMediaQuery(theme.breakpoints.down('md'))
 
-    const { addToCart,addToCartText} = useCart(product)
+    const { onlyAddToCart} = useCart(product)
     console.log(product);
 
     return (
@@ -74,7 +74,10 @@ export  function ProductDetail({open, onClose ,product}) {
                     sx= {{mt : 4}} display = 'flex' alignItems={'center'} justifyContent = 'space-between'>
 
                     <IncDec product = {product} />
-                    <Button variant = 'contained' onClick={addToCart} >{addToCartText}</Button>
+                    <Button variant = 'contained' 
+                        onClick={() => {
+                        onlyAddToCart() 
+                        onClose()}} >Add to cart</Button>
                     </Box>
                     <Box 
                     display = 'flex'
