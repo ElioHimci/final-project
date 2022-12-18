@@ -31,7 +31,7 @@ export  function ProductDetail({open, onClose ,product}) {
     const matches= useMediaQuery(theme.breakpoints.down('md'))
 
     const { addToCart,addToCartText} = useCart(product)
-
+    console.log(product);
 
     return (
         <Dialog
@@ -45,7 +45,7 @@ export  function ProductDetail({open, onClose ,product}) {
             }}>
                 <Box
                 display= {'flex'}
-                alignItems ='space-beetween'
+                alignItems ='space-between'
                 justifyContent = 'center'
                 >
                     Product Title

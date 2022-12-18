@@ -34,7 +34,8 @@ export default function IncDec({product}){
         const newAmount = clampV(amount + 1)
 
         const productIndex = cart.findIndex(c => c.id === product.id)
-
+        // console.log(productIndex);
+        // console.log(cart);
         const newProduct = { ...cart[productIndex], amount: newAmount }
 
         const updatedCart = [
